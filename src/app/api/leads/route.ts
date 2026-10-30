@@ -9,6 +9,55 @@ export const runtime = "nodejs";
 
 const json = (body: Record<string, unknown>, status = 200) => NextResponse.json(body, { status });
 
+async function sendSlackLeadNotification(lead: {
+  id: string;
+  type: string;
+  fullName: string;
+  email: string;
+  company: string | null;
+  country: string;
+  service: string;
+  description: string;
+}) {
+  const webhookUrl = process.env.SLACK_WEBHOOK_URL;
+  if (!webhookUrl) return false;
+
+  // Only send to Slack's official incoming-webhook endpoint.
+  if (!/^https:\/\/hooks\.slack\.com\/services\//.test(webhookUrl)) {
+    console.error("[leads] SLACK_WEBHOOK_URL must be an official Slack webhook URL.");
+    return false;
+  }
+
+  const message = [
+    ":incoming_envelope: *New website inquiry*",
+    `*Type:* ${lead.type}`,
+    `*Name:* ${lead.fullName}`,
+    `*Email:* ${lead.email}`,
+    `*Company:* ${lead.company || "Not provided"}`,
+    `*Country:* ${lead.country}`,
+    `*Service:* ${lead.service}`,
+    `*Message:* ${lead.description.slice(0, 2500)}`,
+    `*Reference:* ${lead.id.slice(-8).toUpperCase()}`,
+  ].join("\n");
+
+  try {
+    const response = await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text: message }),
+      cache: "no-store",
+    });
+    if (!response.ok) {
+      console.error("[leads] Slack notification failed:", response.status);
+      return false;
+    }
+    return true;
+  } catch (error) {
+    console.error("[leads] Slack notification error:", error instanceof Error ? error.message : "unknown");
+    return false;
+  }
+}
+
 export async function POST(req: Request) {
   try {
     // Same-origin check: browsers send Origin on cross-site POSTs.
@@ -66,9 +115,15 @@ export async function POST(req: Request) {
       },
     });
 
-    // Email failure must never lose the lead; it is already saved.
-    const emailed = await sendLeadNotification(lead);
+    // Notifications are best-effort: a delivery issue must never lose a saved lead.
+    const [emailed, slacked] = await Promise.all([
+      sendLeadNotification(lead),
+      sendSlackLeadNotification(lead),
+    ]);
     if (!emailed) console.warn(`[leads] Lead ${lead.id} saved but notification email was not sent.`);
+    if (process.env.SLACK_WEBHOOK_URL && !slacked) {
+      console.warn(`[leads] Lead ${lead.id} saved but Slack notification was not sent.`);
+    }
 
     return json({ ok: true, reference: lead.id.slice(-8).toUpperCase() });
   } catch (err) {
