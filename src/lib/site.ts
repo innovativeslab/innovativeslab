@@ -4,7 +4,7 @@ export const site = {
   url: (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000").replace(/\/$/, ""),
   // Contact details are shown ONLY when configured. Nothing is invented.
   contactEmail: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "",
-  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "",
+  bookingUrl: process.env.NEXT_PUBLIC_BOOKING_URL || "https://calendly.com/innovativeslabofficial/30min",
   socials: [
     { label: "LinkedIn", href: process.env.NEXT_PUBLIC_LINKEDIN_URL || "" },
     { label: "GitHub", href: process.env.NEXT_PUBLIC_GITHUB_URL || "" },
