@@ -17,7 +17,7 @@ export default function ConsultationPage() {
                 <h2 className="text-xl font-semibold">Schedule a meeting</h2>
                 <p className="mt-2 text-muted">Select an available date and time below.</p>
               </div>
-              <ButtonLink href={site.bookingUrl} cta="consultation: open Calendly in new tab" />
+              <ButtonLink href={site.bookingUrl} cta="consultation: open Calendly in new tab">Open Calendly</ButtonLink>
             </div>
             <iframe
               src={site.bookingUrl}
