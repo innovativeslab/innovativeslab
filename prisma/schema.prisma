@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  PROPOSAL_SENT
+  WON
+  LOST
+}
+
+enum LeadType {
+  QUOTE
+  CONSULTATION
+  CONTACT
+}
+
+model Lead {
+  id            String     @id @default(cuid())
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  type          LeadType
+  status        LeadStatus @default(NEW)
+  fullName      String
+  email         String
+  company       String?
+  country       String
+  service       String
+  description   String
+  siteUrl       String?
+  techStack     String?
+  budget        String?
+  timeline      String?
+  preferredTime String?
+  consentAt     DateTime
+  ipHash        String?
+  userAgent     String?
+  notes         LeadNote[]
+
+  @@index([status, createdAt])
+  @@index([email])
+  @@index([createdAt])
+}
+
+model LeadNote {
+  id        String   @id @default(cuid())
+  leadId    String
+  author    String
+  body      String
+  createdAt DateTime @default(now())
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([leadId, createdAt])
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+}
+
+model RateLimitEvent {
+  id        String   @id @default(cuid())
+  key       String
+  createdAt DateTime @default(now())
+
+  @@index([key, createdAt])
+}
