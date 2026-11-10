@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ButtonLink, PageHeader } from "@/components/ui";
 import { LeadForm } from "@/components/LeadForm";
 import { buildMetadata } from "@/lib/seo";
@@ -15,7 +16,7 @@ export default function ConsultationPage() {
     <>
       <PageHeader
         title="Book a consultation"
-        intro="Choose a time that works for you. Your meeting will be scheduled securely through Calendly."
+        intro="A free conversation with an engineer about your project, your options and what a sensible next step looks like. Schedule securely through Calendly."
       />
 
       <section className="section">
@@ -61,6 +62,16 @@ export default function ConsultationPage() {
               Prefer to send a request?
             </h2>
             <LeadForm variant="CONSULTATION" />
+            <p className="mt-8 text-sm text-muted">
+              Prefer to send details first?{" "}
+              <Link
+                className="font-semibold text-brand underline"
+                href="/request-quote"
+              >
+                Request a quote
+              </Link>
+              .
+            </p>
           </div>
         </div>
       </section>

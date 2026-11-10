@@ -34,7 +34,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             <p className="lede mt-5">{p.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ExternalProjectLink project={p} className="inline-flex items-center rounded-lg bg-brand px-5 py-3 font-semibold text-white hover:bg-brand-hover" />
-              <Link href="/request-quote" className="inline-flex items-center rounded-lg border border-edge bg-card px-5 py-3 font-semibold hover:border-brand hover:text-brand" data-cta={`project-${p.slug}: Discuss a similar project`}>Discuss a similar project</Link>
+              <Link href="/request-quote" className="inline-flex items-center rounded-lg border border-edge bg-card px-5 py-3 font-semibold hover:border-brand hover:text-brand" data-cta={`project-${p.slug}: Start a similar project`}>Discuss a similar project</Link>
             </div>
           </div>
           <div className="overflow-hidden rounded-xl border border-line shadow-lift"><ProjectVisual project={p} priority /></div>
@@ -70,7 +70,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </ul>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title={`Want something like ${p.title}?`} text="Tell us what you want to build or fix." button="Start a Project" />
     </>
   );
 }

@@ -21,7 +21,7 @@ export default function ProjectsPage() {
           <p className="mt-10 max-w-2xl text-sm text-muted">Project names and products belong to their respective owners. Illustrations are original graphics and not screenshots of the products.</p>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Have a project like these in mind?" text="Tell us what you want to build or fix." button="Start a Project" />
     </>
   );
 }

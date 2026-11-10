@@ -28,7 +28,7 @@ export default function ServicesPage() {
           </ul>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Not sure which service you need?" text="Describe the problem and we will recommend the right starting point." button="Request a Quote" />
     </>
   );
 }

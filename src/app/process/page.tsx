@@ -21,7 +21,7 @@ export default function ProcessPage() {
           </ol>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Ready for step one?" text="Share your problem and we will take it from there." button="Start a Project" />
     </>
   );
 }

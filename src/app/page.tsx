@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ButtonLink, CtaBand, SectionHead } from "@/components/ui";
+import { ButtonLink, CtaBand, SectionCta, SectionHead } from "@/components/ui";
 import { HeroVisual } from "@/components/HeroVisual";
 import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
@@ -36,8 +36,8 @@ export default function Home() {
             <h1 className="text-4xl font-bold leading-[1.05] sm:text-6xl">Your Technical Problems. Our Expertise. Real Solutions.</h1>
             <p className="lede mt-6">From broken vibe-coded apps to custom websites and complex software challenges, Innovations Labs helps businesses worldwide turn technical roadblocks into reliable digital products.</p>
             <div className="mt-9 flex flex-wrap gap-3">
-              <ButtonLink href="/request-quote" cta="hero: Discuss Your Project">Discuss Your Project</ButtonLink>
-              <ButtonLink href="/services" variant="secondary" cta="hero: Explore Our Services">Explore Our Services</ButtonLink>
+              <ButtonLink href="/book-consultation" cta="hero: Get a Free Consultation">Get a Free Consultation</ButtonLink>
+              <ButtonLink href="/projects" variant="secondary" cta="hero: View Our Work">View Our Work</ButtonLink>
             </div>
             <p className="mt-8 text-sm text-muted">Human-led engineering. Clear scope. Worldwide remote collaboration.</p>
           </div>
@@ -54,6 +54,7 @@ export default function Home() {
           <ul className="grid gap-8 md:grid-cols-2">
             {projects.map((p, i) => (<li key={p.slug}><ProjectCard project={p} priority={i < 2} /></li>))}
           </ul>
+          <SectionCta title="Have a project like these in mind?" text="Tell us what you want to build or fix and we will come back with a clear scope." primary={{ label: "Start a Project", href: "/request-quote" }} />
         </div>
       </section>
 
@@ -71,6 +72,7 @@ export default function Home() {
               </li>
             ))}
           </ul>
+          <SectionCta title="Not sure which service you need?" text="Describe the problem. We will recommend the right starting point." primary={{ label: "Request a Quote", href: "/request-quote" }} secondary={{ label: "Book a Consultation", href: "/book-consultation" }} />
         </div>
       </section>
 

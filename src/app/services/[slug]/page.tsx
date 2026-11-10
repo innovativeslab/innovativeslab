@@ -75,7 +75,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </ul>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand button="Start Your Project" href={quoteHref} />
     </>
   );
 }

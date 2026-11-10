@@ -5,6 +5,14 @@
 - Portfolio: FunnelBeam, TuneRegistry, MENT (Getment) and Cheetay Food Delivery as consistent cards, with a `/projects/[slug]` detail page each, a prominent homepage preview, and sitemap entries.
 - Homepage restructured: hero, portfolio, services, technical capabilities, app rescue, problems, process, commitments, FAQ, closing CTA.
 
+### Calls to action
+- Hero: **Get a Free Consultation** (/book-consultation) and **View Our Work** (/projects).
+- After portfolio: **Start a Project**. After services: **Request a Quote** with **Book a Consultation** as secondary.
+- Closing band on every marketing page, worded for the page (Start a Project, Request a Quote, Book a Consultation); service pages pre-select the service in the quote form.
+- Quiet text cross-links between the quote, consultation and contact forms instead of extra buttons.
+- All CTAs carry `data-cta` labels for consent-gated analytics. A script checked that all 27 internal link targets resolve to real routes (0 broken); it has not clicked anything in a browser.
+- "Free" in the hero CTA and on the booking page reflects the owner's wording; confirm the offer is accurate.
+
 ### Design decisions
 - Palette refined from the suggested one after computing WCAG contrast: secondary text `#56657A` (5.9:1 on white, 5.6:1 on soft; the suggested `#64748B` is 4.48:1 on the soft background), form borders `#8392A5` (3.2:1) because `#E5E7EB` is only 1.2:1, cyan used for decoration only.
 - Reused existing components; `ProjectCard`, `ProjectVisual` and `portfolio.ts` are new. Adding a project is one array entry.
