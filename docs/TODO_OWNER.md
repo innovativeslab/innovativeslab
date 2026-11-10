@@ -5,7 +5,7 @@
 - Real profile links if wanted (LinkedIn/GitHub env vars). Nothing is displayed if empty.
 - Legal entity name, registered address, jurisdiction, data retention period; have a lawyer review Privacy, Terms and Cookie pages, then set `NEXT_PUBLIC_LEGAL_REVIEWED=true`.
 - Team profiles and verified testimonials, with written permission (none are shown).
-- Portfolio: confirm Innovations Labs may list FunnelBeam, TuneRegistry, MENT and Cheetay, and write a short, accurate `role` for each (what you actually did) in `src/content/en/portfolio.ts`. The field is empty, so no role is claimed.
+- Portfolio: the owner confirmed all four projects were developed end to end by Innovations Labs; the `role` text states exactly that. Refine it per project in `src/content/en/portfolio.ts` if you want more detail (only add facts that are true).
 - Portfolio visuals: cards currently show original illustrations labelled "Illustration". Add real screenshots only if you own them or have permission: put files in `public/portfolio/` and set `image` on the project.
 - Cheetay Food Delivery: no verified URL exists in the repository, so it has a detail page but no external link. Provide the correct URL and set `url`.
 - Confirm the service list matches what you can genuinely deliver (edit `src/content/en/services.ts`).

@@ -10,7 +10,7 @@ All 22 requested pages (10 service pages incl. technical consulting), reusable c
 - Portfolio: FunnelBeam, TuneRegistry, MENT, Cheetay with cards, detail pages, homepage preview and sitemap entries.
 - Not touched: `/api/leads`, `src/lib/email.ts`, `prisma/schema.prisma`, migrations, auth, middleware.
 - Mismatch with the brief: this codebase has NO Slack lead notifications and NO Calendly embed (only an optional `NEXT_PUBLIC_BOOKING_URL` link and Resend email). If your live repo has those, this branch does not conflict with them but was not tested against them.
-- ESLint is not configured in this repository, so linting has not been run.
+- ESLint (`next/core-web-vitals`) was added in this branch (`npm run lint`, also in CI). It has not been run by the author, so first-run warnings or errors are possible.
 
 ## Verified (in the authoring sandbox)
 - All 51 TypeScript/TSX files parse with no syntax errors.

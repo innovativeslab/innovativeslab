@@ -33,6 +33,7 @@ export const projects: Project[] = [
     capabilities: ["CRM automation", "Lead enrichment", "Data intelligence", "Workflow automation"],
     url: "https://www.funnelbeam.com/",
     visual: "funnel",
+    role: "Designed and developed end to end by Innovations Labs, from planning through delivery.",
   },
   {
     slug: "tuneregistry",
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     capabilities: ["Music catalog management", "Metadata management", "Rights registration", "Royalty administration"],
     url: "https://www.tuneregistry.com/",
     visual: "registry",
+    role: "Designed and developed end to end by Innovations Labs, from planning through delivery.",
   },
   {
     slug: "ment",
@@ -53,6 +55,7 @@ export const projects: Project[] = [
     capabilities: ["Relationship insights", "Contact intelligence", "Smart follow-up"],
     url: "https://getment.io/",
     visual: "relationship",
+    role: "Designed and developed end to end by Innovations Labs, from planning through delivery.",
   },
   {
     slug: "cheetay-food-delivery",
@@ -63,6 +66,7 @@ export const projects: Project[] = [
     capabilities: ["Online food ordering", "Delivery", "Customer experience"],
     // url intentionally omitted: no verified project URL is available in the repository.
     visual: "delivery",
+    role: "Designed and developed end to end by Innovations Labs, from planning through delivery.",
   },
 ];
 
