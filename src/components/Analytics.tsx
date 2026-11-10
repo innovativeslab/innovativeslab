@@ -48,7 +48,7 @@ export function Analytics() {
         </>
       )}
       {choice === "unset" && (
-        <div role="dialog" aria-label="Cookie preferences" className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-xl rounded-lg border border-line bg-raised p-5 shadow-2xl">
+        <div role="dialog" aria-label="Cookie preferences" className="fixed inset-x-3 bottom-3 z-50 mx-auto max-w-xl rounded-lg border border-line bg-card shadow-lift p-5 shadow-lift">
           <p className="text-sm text-fg">We would like to use analytics cookies to understand how the site is used. They stay off unless you accept. <a className="text-link underline" href="/cookie-policy">Cookie policy</a></p>
           <div className="mt-4 flex gap-3">
             <button type="button" onClick={() => save("granted")} className="rounded-md bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-hover">Accept analytics</button>

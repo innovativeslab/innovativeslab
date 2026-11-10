@@ -13,7 +13,7 @@ export const navLinks = [
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line bg-ink/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-line bg-page/90 backdrop-blur">
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:rounded-md focus:bg-brand focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
       <div className="wrap flex h-16 items-center justify-between">
         <Link href="/" aria-label="Innovations Labs home"><Logo /></Link>

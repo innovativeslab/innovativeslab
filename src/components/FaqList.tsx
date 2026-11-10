@@ -1,6 +1,6 @@
 export function FaqList({ items }: { items: { q: string; a: string }[] }) {
   return (
-    <div className="divide-y divide-line rounded-lg border border-line bg-panel">
+    <div className="divide-y divide-line rounded-lg border border-line bg-card shadow-card">
       {items.map((f) => (
         <details key={f.q} className="group p-5">
           <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-lg font-semibold">

@@ -15,7 +15,7 @@ export default function ProjectsPage() {
           </div>
           <ul className="grid gap-6 lg:grid-cols-3">
             {demoProjects.map((p) => (
-              <li key={p.title} className="flex flex-col rounded-lg border border-dashed border-line bg-panel p-7">
+              <li key={p.title} className="flex flex-col rounded-lg border border-dashed border-line bg-card p-7">
                 <p className="w-fit rounded border border-warn/60 px-2 py-0.5 text-xs font-semibold text-warn">Demo concept, not client work</p>
                 <h2 className="mt-4 text-2xl font-semibold">{p.title}</h2>
                 <p className="mt-1 text-sm text-link">{p.stack}</p>

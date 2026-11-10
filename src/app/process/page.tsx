@@ -13,7 +13,7 @@ export default function ProcessPage() {
           <ol className="max-w-3xl space-y-0 border-l border-line">
             {processSteps.map((s, i) => (
               <li key={s.title} className="relative pb-10 pl-8 last:pb-0">
-                <span aria-hidden="true" className="absolute -left-[13px] top-0 flex h-6 w-6 items-center justify-center rounded-full border border-line bg-ink text-xs font-semibold text-link">{i + 1}</span>
+                <span aria-hidden="true" className="absolute -left-[13px] top-0 flex h-6 w-6 items-center justify-center rounded-full border border-line bg-page text-xs font-semibold text-link">{i + 1}</span>
                 <h2 className="text-xl font-semibold">{s.title}</h2>
                 <p className="mt-2 text-muted">{s.body}</p>
               </li>

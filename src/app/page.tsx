@@ -47,10 +47,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section border-t border-line bg-panel/40">
+      <section className="section border-t border-line bg-soft">
         <div className="wrap">
           <SectionHead title="Sound familiar?" intro="These are the situations clients usually arrive with, and how we approach each one." />
-          <div className="divide-y divide-line rounded-lg border border-line bg-panel">
+          <div className="divide-y divide-line rounded-lg border border-line bg-card shadow-card">
             {problems.map((p) => (
               <div key={p.problem} className="grid gap-2 p-6 md:grid-cols-2 md:gap-10">
                 <p className="font-display text-xl font-semibold">{p.problem}</p>
@@ -67,7 +67,7 @@ export default function Home() {
           <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="block h-full rounded-lg border border-line bg-panel p-6 transition-colors hover:border-link">
+                <Link href={`/services/${s.slug}`} className="block h-full rounded-lg border border-line bg-card shadow-card p-6 transition duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lift">
                   <h3 className="text-xl font-semibold">{s.nav}</h3>
                   <p className="mt-2 text-muted">{s.summary}</p>
                   <span className="mt-4 inline-block text-sm font-semibold text-link">Learn more about {s.nav.toLowerCase()}</span>
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <ul className="grid content-center gap-3 text-muted sm:grid-cols-2">
             {["Debugging broken apps", "Authentication and database fixes", "API and integration repairs", "Deployment and hosting problems", "Completing unfinished features", "Production-readiness review"].map((i) => (
-              <li key={i} className="rounded-md border border-line bg-ink/60 px-4 py-3">{i}</li>
+              <li key={i} className="rounded-md border border-line bg-card px-4 py-3">{i}</li>
             ))}
           </ul>
         </div>
@@ -102,7 +102,7 @@ export default function Home() {
           <SectionHead title="How we work" intro="Six steps, in this order, on every project." />
           <ol className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {processSteps.map((s, i) => (
-              <li key={s.title} className="rounded-lg border border-line bg-panel p-6">
+              <li key={s.title} className="rounded-lg border border-line bg-card shadow-card p-6">
                 <span className="font-display text-sm font-semibold text-link">Step {i + 1}</span>
                 <h3 className="mt-1 text-lg font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm text-muted">{s.body}</p>
@@ -112,12 +112,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section border-t border-line bg-panel/40">
+      <section className="section border-t border-line bg-soft">
         <div className="wrap">
           <SectionHead title="Projects" intro="We have not published client case studies yet. Until we have permission to share real work, the examples below are demonstration concepts that show how we would approach typical problems." />
           <ul className="grid gap-5 md:grid-cols-3">
             {demoProjects.map((p) => (
-              <li key={p.title} className="rounded-lg border border-dashed border-line bg-panel p-6">
+              <li key={p.title} className="rounded-lg border border-dashed border-line bg-card p-6">
                 <p className="inline-block rounded border border-warn/60 px-2 py-0.5 text-xs font-semibold text-warn">Demo concept, not client work</p>
                 <h3 className="mt-3 text-lg font-semibold">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted">{p.shows}</p>

@@ -8,7 +8,7 @@ const rows = [
 export function HeroVisual() {
   return (
     <figure aria-label="Illustrative example of a rescue assessment" className="relative">
-      <div className="rounded-xl border border-line bg-panel shadow-2xl">
+      <div className="rounded-xl border border-line bg-card shadow-lift">
         <div className="flex items-center justify-between border-b border-line px-4 py-3">
           <span className="font-display text-sm font-semibold">Rescue assessment</span>
           <span className="rounded border border-line px-2 py-0.5 text-xs text-muted">Illustrative example</span>

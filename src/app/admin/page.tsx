@@ -51,7 +51,7 @@ export default async function AdminHome({ searchParams }: { searchParams: { q?: 
 
       <ul className="mt-6 flex flex-wrap gap-3 text-sm">
         {STATUSES.map((s) => (
-          <li key={s} className="rounded-md border border-line bg-panel px-3 py-1.5">{label(s)}: <strong>{counts.find((c) => c.status === s)?._count ?? 0}</strong></li>
+          <li key={s} className="rounded-md border border-line bg-card shadow-card px-3 py-1.5">{label(s)}: <strong>{counts.find((c) => c.status === s)?._count ?? 0}</strong></li>
         ))}
       </ul>
 
@@ -67,10 +67,10 @@ export default async function AdminHome({ searchParams }: { searchParams: { q?: 
       ) : (
         <div className="mt-6 overflow-x-auto rounded-lg border border-line">
           <table className="w-full min-w-[720px] text-left text-sm">
-            <thead className="bg-panel text-muted"><tr><th className="p-3">Received</th><th className="p-3">Name</th><th className="p-3">Type</th><th className="p-3">Service</th><th className="p-3">Country</th><th className="p-3">Status</th></tr></thead>
+            <thead className="bg-soft text-muted"><tr><th className="p-3">Received</th><th className="p-3">Name</th><th className="p-3">Type</th><th className="p-3">Service</th><th className="p-3">Country</th><th className="p-3">Status</th></tr></thead>
             <tbody className="divide-y divide-line">
               {leads.map((l) => (
-                <tr key={l.id} className="hover:bg-panel/60">
+                <tr key={l.id} className="hover:bg-soft">
                   <td className="whitespace-nowrap p-3 text-muted">{l.createdAt.toISOString().slice(0, 16).replace("T", " ")} UTC</td>
                   <td className="p-3"><Link className="font-semibold text-link underline" href={`/admin/leads/${l.id}`}>{l.fullName}</Link><div className="text-muted">{l.email}</div></td>
                   <td className="p-3">{label(l.type)}</td>
