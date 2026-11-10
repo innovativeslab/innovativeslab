@@ -19,7 +19,7 @@
   .wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
   .section { @apply py-16 sm:py-24; }
   .lede { @apply text-lg leading-relaxed text-muted max-w-2xl; }
-  .field { @apply w-full rounded-lg border border-edge bg-card px-3.5 py-2.5 text-fg placeholder:text-muted/70 transition-colors focus:border-brand; }
+  .field { @apply w-full rounded-lg border border-edge bg-card px-3.5 py-2.5 text-fg placeholder:text-muted transition-colors focus:border-brand; }
   .field[aria-invalid="true"] { @apply border-bad; }
   .label { @apply mb-1.5 block text-sm font-medium text-fg; }
   .hint { @apply mt-1 text-sm text-muted; }
