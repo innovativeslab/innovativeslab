@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { CheckList, CtaBand } from "@/components/ui";
-import { ExternalProjectLink } from "@/components/ProjectCard";
+import { ProjectLinks } from "@/components/ProjectCard";
 import { ProjectVisual } from "@/components/ProjectVisual";
 import { getProject, projects } from "@/content/en/portfolio";
 import { buildMetadata } from "@/lib/seo";
@@ -29,11 +29,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
         <div className="wrap grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-2">
           <div>
             <Link href="/projects" className="text-sm font-semibold text-brand hover:underline">All projects</Link>
-            <p className="mt-6 text-sm font-semibold text-brand">{p.category}</p>
+            {p.status && <p className="mt-6 inline-block rounded-full border border-ok/40 bg-ok/10 px-3 py-1 text-xs font-semibold text-ok">{p.status}</p>}
+            <p className="mt-4 text-sm font-semibold text-brand">{p.category}</p>
             <h1 className="mt-2 text-4xl font-bold sm:text-5xl">{p.title}</h1>
             <p className="lede mt-5">{p.summary}</p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <ExternalProjectLink project={p} className="inline-flex items-center rounded-lg bg-brand px-5 py-3 font-semibold text-white hover:bg-brand-hover" />
+              <ProjectLinks project={p} size="hero" />
               <Link href="/request-quote" className="inline-flex items-center rounded-lg border border-edge bg-card px-5 py-3 font-semibold hover:border-brand hover:text-brand" data-cta={`project-${p.slug}: Start a similar project`}>Discuss a similar project</Link>
             </div>
           </div>
@@ -51,6 +52,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <div>
             <h2 className="text-2xl font-bold">Capabilities</h2>
             <div className="mt-5"><CheckList items={p.capabilities} /></div>
+            {p.technologies && (<><h2 className="mt-10 text-2xl font-bold">Built with</h2><ul className="mt-4 flex flex-wrap gap-2">{p.technologies.map((t) => (<li key={t} className="rounded-full border border-line bg-soft px-3 py-1 text-sm font-medium text-muted">{t}</li>))}</ul></>)}
           </div>
         </div>
       </section>
