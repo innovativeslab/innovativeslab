@@ -54,27 +54,3 @@ export const faqs = [
   { q: "Who owns the deliverables?", a: "Ownership terms are set out in the written agreement for each project. The intention is that you own the work you pay for, and the details are confirmed in writing before work begins." },
   { q: "What happens after delivery?", a: "Your scope includes handover documentation and an agreed support period. If you want continuing updates, monitoring or support, we offer maintenance arrangements." },
 ];
-
-export const demoProjects = [
-  {
-    title: "Appointment booking portal",
-    stack: "Next.js, TypeScript, PostgreSQL",
-    problem: "A service business takes bookings by phone and message, and loses track of them.",
-    approach: "A customer-facing booking page with a staff dashboard, availability rules and email confirmations.",
-    shows: "How we scope a web application, model the data and plan testing.",
-  },
-  {
-    title: "Rescue of a prototype that fails after deploy",
-    stack: "React, hosted backend, third-party auth",
-    problem: "A generated prototype works in preview but sign-in fails once deployed.",
-    approach: "Compare environments, trace the authentication flow, correct configuration and add basic tests.",
-    shows: "How a rescue assessment moves from symptom to cause to fix.",
-  },
-  {
-    title: "Store checkout repair",
-    stack: "Online store, payment provider, webhooks",
-    problem: "Customers reach payment but some orders never register.",
-    approach: "Reproduce the journey, inspect webhook handling and order creation, fix and retest end to end.",
-    shows: "How we investigate and verify a revenue-critical bug.",
-  },
-];

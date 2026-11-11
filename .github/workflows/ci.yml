@@ -20,6 +20,7 @@ jobs:
           node-version: 20
       - run: npm install --no-audit --no-fund
       - run: npm run typecheck
+      - run: npm run lint
       - run: npm test
       # Early stage branches have no pages yet, so only build once the app exists.
       - name: Production build

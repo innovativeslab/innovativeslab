@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHeader } from "@/components/ui";
 import { LeadForm } from "@/components/LeadForm";
 import { SERVICE_OPTIONS } from "@/lib/options";
@@ -11,7 +12,8 @@ export default function QuotePage({ searchParams }: { searchParams: { service?: 
   return (
     <>
       <PageHeader title="Request a quote" intro="Describe your project. An engineer reads every request and replies with questions or a proposed scope." />
-      <section className="section"><div className="wrap max-w-3xl"><LeadForm variant="QUOTE" defaultService={defaultService} /></div></section>
+      <section className="section"><div className="wrap max-w-3xl"><LeadForm variant="QUOTE" defaultService={defaultService} />
+          <p className="mt-8 text-sm text-muted">Prefer to talk first? <Link className="font-semibold text-brand underline" href="/book-consultation">Book a consultation</Link>.</p></div></section>
     </>
   );
 }

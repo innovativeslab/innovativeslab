@@ -24,11 +24,11 @@ export function MobileNav({ links }: { links: { href: string; label: string }[] 
         {open ? "Close" : "Menu"}
       </button>
       {open && (
-        <nav id="mobile-menu" aria-label="Mobile" className="absolute inset-x-0 top-16 border-b border-line bg-ink px-5 py-4">
+        <nav id="mobile-menu" aria-label="Mobile" className="absolute inset-x-0 top-16 border-b border-line bg-page px-5 py-4">
           <ul className="space-y-1">
             {links.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} onClick={() => setOpen(false)} className="block rounded-md px-3 py-3 text-base text-fg hover:bg-panel">{l.label}</Link>
+                <Link href={l.href} onClick={() => setOpen(false)} className="block rounded-md px-3 py-3 text-base text-fg hover:bg-card">{l.label}</Link>
               </li>
             ))}
             <li>

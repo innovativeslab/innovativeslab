@@ -18,7 +18,7 @@ export default function ServicesPage() {
           <ul className="grid gap-5 md:grid-cols-2">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="block h-full rounded-lg border border-line bg-panel p-7 transition-colors hover:border-link">
+                <Link href={`/services/${s.slug}`} className="block h-full rounded-lg border border-line bg-card shadow-card p-7 transition duration-200 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lift">
                   <h2 className="text-2xl font-semibold">{s.title}</h2>
                   <p className="mt-3 text-muted">{s.summary}</p>
                   <span className="mt-5 inline-block text-sm font-semibold text-link">View {s.nav.toLowerCase()}</span>
@@ -28,7 +28,7 @@ export default function ServicesPage() {
           </ul>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Not sure which service you need?" text="Describe the problem and we will recommend the right starting point." button="Request a Quote" />
     </>
   );
 }

@@ -12,7 +12,7 @@ export default function FaqPage() {
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }} />
       <PageHeader title="Frequently asked questions" />
       <section className="section"><div className="wrap max-w-4xl"><FaqList items={faqs} /></div></section>
-      <CtaBand />
+      <CtaBand title="Still have a question?" text="Ask an engineer directly." button="Book a Consultation" href="/book-consultation" secondary={{ label: "Contact Us", href: "/contact" }} />
     </>
   );
 }

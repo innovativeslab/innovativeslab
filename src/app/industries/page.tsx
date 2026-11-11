@@ -20,7 +20,7 @@ export default function IndustriesPage() {
           </dl>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Tell us what you are working on" text="We will tell you honestly whether and how we can help." button="Request a Quote" secondary={{ label: "Book a Consultation", href: "/book-consultation" }} />
     </>
   );
 }

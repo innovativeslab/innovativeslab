@@ -25,7 +25,7 @@ export default function AboutPage() {
           </dl>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand title="Talk to the people who will do the work" text="A short conversation is the quickest way to find out whether we are the right fit." button="Book a Consultation" href="/book-consultation" secondary={{ label: "Request a Quote", href: "/request-quote" }} />
     </>
   );
 }

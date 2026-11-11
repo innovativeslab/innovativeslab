@@ -46,7 +46,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
-      <section className="section border-t border-line bg-panel/40">
+      <section className="section border-t border-line bg-soft">
         <div className="wrap grid gap-14 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-bold">What you receive</h2>
@@ -55,7 +55,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <div>
             <h2 className="text-2xl font-bold">Who this is for</h2>
             <div className="mt-5"><CheckList items={s.bestFor} /></div>
-            {s.note && <p className="mt-8 rounded-md border border-line bg-panel p-4 text-sm text-muted">{s.note}</p>}
+            {s.note && <p className="mt-8 rounded-md border border-line bg-card shadow-card p-4 text-sm text-muted">{s.note}</p>}
           </div>
         </div>
       </section>
@@ -66,7 +66,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <ul className="mt-6 grid gap-4 sm:grid-cols-3">
             {related.map((r) => (
               <li key={r.slug}>
-                <Link href={`/services/${r.slug}`} className="block h-full rounded-lg border border-line bg-panel p-5 hover:border-link">
+                <Link href={`/services/${r.slug}`} className="block h-full rounded-lg border border-line bg-card shadow-card p-5 hover:border-link">
                   <span className="font-display text-lg font-semibold">{r.nav}</span>
                   <span className="mt-2 block text-sm text-muted">{r.summary}</span>
                 </Link>
@@ -75,7 +75,7 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           </ul>
         </div>
       </section>
-      <CtaBand />
+      <CtaBand button="Start Your Project" href={quoteHref} />
     </>
   );
 }

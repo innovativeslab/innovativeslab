@@ -4,7 +4,10 @@
 - A real business email address (set `NEXT_PUBLIC_CONTACT_EMAIL`, `LEAD_NOTIFY_EMAIL`).
 - Real profile links if wanted (LinkedIn/GitHub env vars). Nothing is displayed if empty.
 - Legal entity name, registered address, jurisdiction, data retention period; have a lawyer review Privacy, Terms and Cookie pages, then set `NEXT_PUBLIC_LEGAL_REVIEWED=true`.
-- Team profiles and verified case studies or testimonials, with written permission. Until then the site shows clearly labelled demo concepts and no team section.
+- Team profiles and verified testimonials, with written permission (none are shown).
+- Portfolio: the owner confirmed all four projects were developed end to end by Innovations Labs; the `role` text states exactly that. Refine it per project in `src/content/en/portfolio.ts` if you want more detail (only add facts that are true).
+- Portfolio visuals: cards currently show original illustrations labelled "Illustration". Add real screenshots only if you own them or have permission: put files in `public/portfolio/` and set `image` on the project.
+- Cheetay Food Delivery: no verified URL exists in the repository, so it has a detail page but no external link. Provide the correct URL and set `url`.
 - Confirm the service list matches what you can genuinely deliver (edit `src/content/en/services.ts`).
 - Decide on file attachments (not implemented, see STATUS) and booking calendar (optional).
 - Choose the admin email/password for the first admin user.

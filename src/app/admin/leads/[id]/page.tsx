@@ -38,7 +38,7 @@ export default async function LeadPage({ params }: { params: { id: string } }) {
       </dl>
 
       <h2 className="mt-10 text-xl font-semibold">Description</h2>
-      <p className="mt-2 whitespace-pre-wrap rounded-lg border border-line bg-panel p-5 text-muted">{lead.description}</p>
+      <p className="mt-2 whitespace-pre-wrap rounded-lg border border-line bg-card shadow-card p-5 text-muted">{lead.description}</p>
 
       <h2 className="mt-10 text-xl font-semibold">Internal notes</h2>
       <form action={addNoteAction} className="mt-3 space-y-3">
@@ -48,7 +48,7 @@ export default async function LeadPage({ params }: { params: { id: string } }) {
       </form>
       {lead.notes.length === 0 ? <p className="mt-4 text-sm text-muted">No notes yet.</p> : (
         <ul className="mt-4 space-y-3">{lead.notes.map((n) => (
-          <li key={n.id} className="rounded-lg border border-line bg-panel p-4"><p className="whitespace-pre-wrap">{n.body}</p><p className="mt-2 text-xs text-muted">{n.author}, {n.createdAt.toISOString().slice(0, 16).replace("T", " ")} UTC</p></li>
+          <li key={n.id} className="rounded-lg border border-line bg-card shadow-card p-4"><p className="whitespace-pre-wrap">{n.body}</p><p className="mt-2 text-xs text-muted">{n.author}, {n.createdAt.toISOString().slice(0, 16).replace("T", " ")} UTC</p></li>
         ))}</ul>
       )}
 
