@@ -1,23 +1,24 @@
 import { CtaBand, PageHeader } from "@/components/ui";
-import { ProjectCard } from "@/components/ProjectCard";
-import { projects } from "@/content/en/portfolio";
+import { FeaturedProjectCard } from "@/components/ProjectCard";
+import { PortfolioGrid } from "@/components/PortfolioGrid";
+import { featuredProject, otherProjects, projects } from "@/content/en/portfolio";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Our Work: Projects and Case Studies",
-  description: "Selected projects: FunnelBeam, TuneRegistry, MENT and Cheetay Food Delivery, spanning sales intelligence, music publishing, relationship intelligence and food delivery.",
+  title: "Our Work: Products, Platforms and Case Studies",
+  description: `Selected work including ${projects.slice(0, 4).map((p) => p.title).join(", ")} and more, across marketing, marketplaces, identity and data platforms.`,
   path: "/projects",
 });
 
 export default function ProjectsPage() {
   return (
     <>
-      <PageHeader title="Our work" intro="Selected projects across sales intelligence, music publishing, relationship intelligence and food delivery." />
+      <PageHeader title="Our work" intro="Products and platforms across social media, sales intelligence, marketplaces, identity verification, music publishing and analytics." />
       <section className="section">
         <div className="wrap">
-          <ul className="grid gap-8 md:grid-cols-2">
-            {projects.map((p, i) => (<li key={p.slug}><ProjectCard project={p} priority={i < 2} /></li>))}
-          </ul>
+          {featuredProject && <FeaturedProjectCard project={featuredProject} />}
+          <h2 className="mb-8 mt-16 text-2xl font-bold sm:text-3xl">All projects</h2>
+          <PortfolioGrid projects={otherProjects} />
           <p className="mt-10 max-w-2xl text-sm text-muted">Project names and products belong to their respective owners. Illustrations are original graphics and not screenshots of the products.</p>
         </div>
       </section>

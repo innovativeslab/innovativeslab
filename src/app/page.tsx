@@ -3,9 +3,9 @@ import { ButtonLink, CtaBand, SectionCta, SectionHead } from "@/components/ui";
 import { HeroVisual } from "@/components/HeroVisual";
 import { FaqList } from "@/components/FaqList";
 import { JsonLd } from "@/components/JsonLd";
-import { ProjectCard } from "@/components/ProjectCard";
+import { FeaturedProjectCard, ProjectCard } from "@/components/ProjectCard";
 import { services } from "@/content/en/services";
-import { projects } from "@/content/en/portfolio";
+import { featuredProject, otherProjects } from "@/content/en/portfolio";
 import { faqs, problems, processSteps, trustPoints, whyUs } from "@/content/en/general";
 import { buildMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -48,11 +48,12 @@ export default function Home() {
       <section className="section" id="work">
         <div className="wrap">
           <div className="flex flex-wrap items-end justify-between gap-x-6">
-            <SectionHead title="Selected projects" intro="Platforms across sales intelligence, music publishing, relationship intelligence and food delivery." />
+            <SectionHead title="Selected projects" intro="Our latest product and platforms across social media, sales intelligence, music publishing and relationship intelligence." />
             <div className="mb-10"><ButtonLink href="/projects" variant="secondary" cta="home: View all projects">View all projects</ButtonLink></div>
           </div>
-          <ul className="grid gap-8 md:grid-cols-2">
-            {projects.map((p, i) => (<li key={p.slug}><ProjectCard project={p} priority={i < 2} /></li>))}
+          {featuredProject && <FeaturedProjectCard project={featuredProject} />}
+          <ul className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {otherProjects.slice(0, 3).map((p) => (<li key={p.slug}><ProjectCard project={p} /></li>))}
           </ul>
           <SectionCta title="Have a project like these in mind?" text="Tell us what you want to build or fix and we will come back with a clear scope." primary={{ label: "Start a Project", href: "/request-quote" }} />
         </div>

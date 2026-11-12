@@ -5,6 +5,13 @@
 - Portfolio: FunnelBeam, TuneRegistry, MENT (Getment) and Cheetay Food Delivery as consistent cards, with a `/projects/[slug]` detail page each, a prominent homepage preview, and sitemap entries.
 - Homepage restructured: hero, portfolio, services, technical capabilities, app rescue, problems, process, commitments, FAQ, closing CTA.
 
+### Portfolio expansion
+- **SocialNexify** is the featured product (large card on /projects and the homepage), described only with what its site states: fully functional and ready for MVP launch, currently in free beta, Facebook and Instagram publishing available, LinkedIn/video/voice not yet released. CTA: View Live Product (https://socialnexify.com/, new tab).
+- **Loinix, Identixa, Pricify** added from the owner's CV (card-level descriptions and stated technologies only; no figures copied; no live/GitHub links because none were verifiable). Four other CV projects (AI voice agent, chatbot, clinical, heart disease) were intentionally not added.
+- Project cards support `technologies`, `github`, `ctaLabel`, `featured`, `status`; three category filters (accessible toggle buttons; all projects visible without JavaScript).
+- Existing four projects are unchanged. New unit test: `tests/portfolio.test.ts`.
+- No real screenshots could be captured; illustrations are labelled. See `docs/TODO_OWNER.md` for how to add them.
+
 ### Calls to action
 - Hero: **Get a Free Consultation** (/book-consultation) and **View Our Work** (/projects).
 - After portfolio: **Start a Project**. After services: **Request a Quote** with **Book a Consultation** as secondary.
